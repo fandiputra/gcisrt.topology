@@ -1,0 +1,100 @@
+--------
+"""
+GCISRT Topology
+"""
+
+from mininet.topo import Topo
+
+class govtopo( Topo ):
+    "GCSIRT Topology"
+
+    def __init__( self ):
+        "Create GCISRT Topology"
+
+        # Initialize topology
+        Topo.__init__( self )
+
+        # Add hosts and switches
+        # Hosts
+        h1 = self.addHost( 'h1', ip='192.168.220.141' )
+        h2 = self.addHost( 'h2', ip='192.168.220.142' )
+        h3 = self.addHost( 'h3', ip='192.168.220.143' )
+        h4 = self.addHost( 'h4', ip='192.168.220.144' )
+        h5 = self.addHost( 'h5', ip='192.168.220.145' )
+        h6 = self.addHost( 'h6', ip='192.168.220.146' )
+        h7 = self.addHost( 'h7', ip='192.168.220.147' )
+        h8 = self.addHost( 'h8', ip='192.168.220.148' )
+        h9 = self.addHost( 'h9', ip='192.168.220.149' )
+        h10 = self.addHost( 'h10', ip='192.168.220.150' )
+        h11 = self.addHost( 'h11', ip='192.168.220.151' )
+        h12 = self.addHost( 'h12', ip='192.168.220.152' )
+        h13 = self.addHost( 'h13', ip='192.168.220.153' )
+        h14 = self.addHost( 'h14', ip='192.168.220.154' )
+        h15 = self.addHost( 'h15', ip='192.168.220.155' )
+        h16 = self.addHost( 'h16', ip='192.168.220.156' )
+        h17 = self.addHost( 'h17', ip='192.168.220.157' )
+        h18 = self.addHost( 'h18', ip='192.168.220.158' )
+        h19 = self.addHost( 'h19', ip='192.168.220.159' )
+        h20 = self.addHost( 'h20', ip='192.168.220.160' )
+        h21 = self.addHost( 'h21', ip='192.168.220.161' )
+        h22 = self.addHost( 'h22', ip='192.168.220.162' )
+        h23 = self.addHost( 'h23', ip='192.168.220.163' )
+        h24 = self.addHost( 'h24', ip='192.168.220.164' )
+        h25 = self.addHost( 'h25', ip='192.168.220.165' )
+        h26 = self.addHost( 'h26', ip='192.168.220.166' )
+        h27 = self.addHost( 'h27', ip='192.168.220.167' )
+        h28 = self.addHost( 'h28', ip='192.168.220.168' )
+        h29 = self.addHost( 'h29', ip='192.168.220.169' )
+        h30 = self.addHost( 'h30', ip='192.168.220.170' )
+
+        #Switches
+        s1 = self.addSwitch( 's1' )
+        s2 = self.addSwitch( 's2' )
+        s3 = self.addSwitch( 's3' )
+        s4 = self.addSwitch( 's4' )
+        s5 = self.addSwitch( 's5' )
+        s6 = self.addSwitch( 's6' )
+       # Add links
+        # Host to Switch links
+        self.addLink( h1, s1 )
+        self.addLink( h2, s1 )
+        self.addLink( h3, s1 )
+        self.addLink( h4, s2 )
+        self.addLink( h5, s2 )
+        self.addLink( h6, s2 )
+        self.addLink( h7, s2 )
+        self.addLink( h8, s2 )
+        self.addLink( h9, s2 )
+        self.addLink( h10, s2 )
+        self.addLink( h11, s2 )
+        self.addLink( h12, s2 )
+        self.addLink( h13, s2 )
+        self.addLink( h14, s2 )
+        self.addLink( h15, s2 )
+        self.addLink( h16, s2 )
+        self.addLink( h17, s2 )
+        self.addLink( h18, s2 )
+        self.addLink( h19, s2 )
+        self.addLink( h20, s2 )
+        self.addLink( h21, s2 )
+        self.addLink( h22, s3 )
+        self.addLink( h23, s3 )
+        self.addLink( h24, s3 )
+        self.addLink( h25, s3 )
+        self.addLink( h26, s3 )
+        self.addLink( h27, s3 )
+        self.addLink( h28, s3 )
+        self.addLink( h29, s3 )
+        self.addLink( h30, s3 )
+
+        # Switch to Switch links
+        self.addLink( s1, s5 )
+        self.addLink( s2, s5 )
+        self.addLink( s2, s6 )
+        self.addLink( s3, s6 )
+        self.addLink( s3, s4 )
+        self.addLink( s5, s6 )
+        self.addLink( s6, s4 )
+        self.addLink( s5, s4 )
+topos = { 'GCISRT': ( lambda: govtopo() ) }
+--------
